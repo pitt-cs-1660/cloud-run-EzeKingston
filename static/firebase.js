@@ -84,12 +84,14 @@ function signOut() {
     });
 }
 
-// Toggle Sign in/out button
+// Toggle Sign in/out button [put the event listener here]
+
 function toggle() {
   if (authDisabled()) {
     window.alert('Auth is disabled.');
     return;
   }
+  
   if (!firebase.auth().currentUser) {
     signIn();
   } else {
@@ -120,7 +122,26 @@ async function vote(team) {
       /*
        * ++++ YOUR CODE HERE ++++
        */
-      window.alert(`Not implemented yet!`);
+      const response = await fetch("/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Authorization": `Bearer ${token}`
+      },
+      body: `team=${encodeURIComponent(team)}` 
+    });
+
+    if(response.ok){
+      window.alert('Vote submitted succcesfully');
+      window.location.reload(); // reloads the window/browser 
+    }else{
+     const errorText = await response.text();
+     console.error(`Error reponse: ${errorText}`);
+     window.alert(`Fail to submit vote: ${errorText}`);
+    }
+        
+      
+    
 
     } catch (err) {
       console.log(`Error when submitting vote: ${err}`);
