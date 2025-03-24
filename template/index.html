@@ -18,6 +18,7 @@
     <div class="nav-wrapper container"><a class="brand-logo center" href="#!">TABS v SPACES</a>
       <ul class="left" id="nav-mobile">
         <button class="waves-effect waves-light btn" id="signInButton">Sign In with Google</button>
+        
       </ul>
     </div>
   </nav>
@@ -54,11 +55,19 @@
   </div>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      <!-- add Event Listener "click" to the vote -->
-      // document.getElementById("voteTabs").addEventListener("click", function () {
-      //   vote("TABS");
-      // });
-    })
+      //<!-- add Event Listener "click" to the vote -->
+       document.getElementById("voteTabs").addEventListener("click", function () {
+         vote("TABS");
+       });
+       document.getElementById("voteSpaces").addEventListener("click", function () {
+         vote("SPACES");
+       });
+       document.getElementById("signInButton").addEventListener("click", function (){
+      toggle();
+       });
+       
+    }
+  );
   </script>
 </body>
 </html>

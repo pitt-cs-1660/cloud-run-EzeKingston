@@ -9,11 +9,12 @@
  */
 
 
+
 /**
  * Firebase configuration
  * @type {{apiKey: string, authDomain: string}}
  */
 const config = {
-  apiKey: 'AIzaSyDhwsk8AklD8Ipj26fVzYTMgrWvE8x1rgc',
-  authDomain: 'cc-spring2025.firebaseapp.com',
+  apiKey: 'AIzaSyCgVHLlTD4PlM-04mdeehT8hst_NDVSL9M',
+  authDomain: 'helpful-scion-454616-k3.firebaseapp.com',
 };
